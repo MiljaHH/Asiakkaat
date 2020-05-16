@@ -37,7 +37,6 @@
 	</table>
 </form>
 <span id="ilmo"></span>
-</body>
 <script>
 $(document).ready(function(){
 	$("#takaisin").click(function(){
@@ -51,7 +50,7 @@ $(document).ready(function(){
 			},	
 			sukunimi:  {
 				required: true,
-				minlength: 3				
+				minlength: 2				
 			},
 			puhelin:  {
 				required: true,
@@ -59,7 +58,7 @@ $(document).ready(function(){
 			},	
 			sposti:  {
 				required: true,
-				minlength: 4
+				email: true	
 			}
 		},
 		
@@ -78,7 +77,7 @@ $(document).ready(function(){
 			},
 			sposti: {
 				required: "Puuttuu",
-				minlength: "Liian lyhyt",
+				minlength: "Ei kelpaa",
 
 			}
 		},			
@@ -86,6 +85,7 @@ $(document).ready(function(){
 			lisaaTiedot();
 		}		
 	}); 	
+	$("#etunimi").focus(); 
 });
 //funktio tietojen lis‰‰mist‰ varten. Kutsutaan backin POST-metodia ja v‰litet‰‰n kutsun mukana uudet tiedot json-stringin‰.
 //POST /autot/
@@ -101,4 +101,5 @@ function lisaaTiedot(){
   }});	
 }
 </script>
+</body>
 </html>
